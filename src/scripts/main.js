@@ -15,10 +15,10 @@ document.addEventListener('click', (e) => {
   };
 
   const isClickInsideWall =
-    currentPosition.x >= 0 &&
-    currentPosition.x <= wall.clientWidth &&
-    currentPosition.y >= 0 &&
-    currentPosition.y <= wall.clientHeight;
+    e.clientX >= wallRect.left &&
+    e.clientX <= wallRect.right &&
+    e.clientY >= wallRect.top &&
+    e.clientY <= wallRect.bottom;
 
   if (!isClickInsideWall) {
     return;
