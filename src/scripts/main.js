@@ -14,6 +14,16 @@ document.addEventListener('click', (e) => {
     y: e.clientY - wallRect.top - wall.clientTop,
   };
 
+  const isClickInsideWall =
+    currentPosition.x >= 0 &&
+    currentPosition.x <= wall.clientWidth &&
+    currentPosition.y >= 0 &&
+    currentPosition.y <= wall.clientHeight;
+
+  if (!isClickInsideWall) {
+    return;
+  }
+
   let x = currentPosition.x - spider.offsetWidth / 2;
   let y = currentPosition.y - spider.offsetHeight / 2;
 
